@@ -6,16 +6,13 @@
 <script async defer type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 
 <script>
-function showMailingPopUp() {
+setTimeout(   
+function() {
     console.log("I am inside");
     require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us15.list-manage.com","uuid":"39f936cddab90b354778810f7","lid":"d024920c3c"}) });
     document.cookie = 'MCEvilPopupClosed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
-};
-$(document).ready(function(){
-    console.log("I am up");
-  setTimeout(showMailingPopUp, 5000);
-  console.log("I am down");
-});
+};, 5000);
+
 </script>
 </body>
 </html>
